@@ -1,18 +1,10 @@
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 </p><em>Contributors: Sviatlana Karaliova, Jana Schaeffer, Nazgul Tobler, Poppy Bütikofer-McLaughlin, Alicia de Mora Losana Gago.</em></p>
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/Stock-News-Monitoring-Program/stock_news">
-    <img src="app_logo.png" alt="Logo" height="130">
+    <img src="https://cdn.pixabay.com/photo/2020/05/21/22/23/logo-5203035_1280.png" alt="Logo" height="130">
   </a>
 
   <p align="center">
@@ -62,21 +54,23 @@ We have built a Flask-based web application that allows registered users to trac
 * ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 * ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 * ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![Bootstrap] (https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 * ![Plotly](https://img.shields.io/badge/-%20Plotly-orange)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### Features
-* User Registration: Users can create an account by providing their email, first name, last name, and password. Passwords are securely hashed and stored in the database. They are also required to enter at least three stock symbols.
-* User Login: Registered users can log in to their accounts using their email and password.
-* Stock Dashboard: After logging in, users are presented with a dashboard that displays stock information and related news articles. The stock information is fetched from the Alpha Vantage API and includes the symbol, current price, previous price, percentage difference, and price direction (whether the price has gone up or down). The news articles are fetched from an API based on the user's stock preferences.
-* Stock Preferences: Users can customize their stock preferences by adding or modifying the stock symbols they are interested in. They can edit their preferences from the dashboard or the settings page.
-* Password Update: Users can change their account password by providing their current password and entering a new password.
-* Logout: Users can log out from their account, which redirects them to the login page.
+### Main Features
+* User Registration: Users can create an account by providing their email, first name, last name, and password. Passwords are securely hashed and stored in a MySQL database. Users are also required to enter at least three ticker symbols (i.e. stock identifiers) of those stocks they would like to track.
+* User Login: Registered users can log in to their accounts using their email and password for their tracked stocks to display on their stock dashboard.
+* User Logout: Users can log out from their account, which redirects the user to the login page.
+* 'Remember Me' (for Registered Users): Registered users do not need to log in as they will remain logged in for easy access unless they have previously logged out.
+* Stock Dashboard: After logging in, users are presented with a dashboard that displays their selected stocks' pricing data as well as most relevant news articles. Pricing information is fetched using the Alpha Vantage API and includes a visual representation of daily closing prices from the beginning of the year (2023) identified with the stock's the ticker symbol, the stock's latest closing price (yesterday's price) in USD, the stock's day-before-yesterday's closing price in USD, the percentage difference between the two, and the direction of the price change (i.e. whether the price has gone up or down). The news articles are fetched from an API based on the user's stock preferences.
+* Stock Selection: Users can ammend their stock preferences in the 'Stock Selection' page.
+* Personal Information Management: Users can ammend their personal details (including their password) in the 'My Account' page.
+* Notifications and Alerts: Users are notified via email (using Sendgrid) if their tracked stocks
 
-### File structure
+### File Structure
 * auth.py: This file contains the authentication-related routes, including user registration, login, logout, and password update.
 * models.py: This file defines the database models used by the application. It includes the User model, which represents the user accounts and their associated fields.
 * views.py: This file contains the main routes and logic for rendering the dashboard, fetching stock data and news articles, and handling user actions.
@@ -92,7 +86,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-The application requires the following dependencies which can be installed from the requirements.txt (see Installation):
+The application requires the following dependencies (amongst others) which can be installed from the requirements.txt (see Installation below):
+
 
 * Flask: A micro web framework used for building the web application.
 * Flask-Login: A Flask extension that handles user authentication and session management.
@@ -103,10 +98,11 @@ The application requires the following dependencies which can be installed from 
 * Requests: A library for making HTTP requests, used for fetching data from external APIs.
 * Werkzeug: A library used for password hashing and verification.
 
-### Installation
+### Installation UPDAAAAAATE THIS PART
 
-1. TO CHANGE!!!! Get a free API Key at [https://example.com](https://example.com) ********
-2. Ensure that Python 3.x is installed on your system
+1. Get a free API Key for Alpha Vantage, News API, SendGrid at [https://www.alphavantage.co/](https://www.alphavantage.co/), [https://newsapi.org](https://newsapi.org/) and [https://www.twilio.com/en-us](https://www.twilio.com/en-us), respectively.
+
+2. Ensure that Python 3.x is installed on your system.
 3. Clone the repo
    ```sh
    git clone https://github.com/Stock-News-Monitoring-Program/*************.git
@@ -168,11 +164,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- ROADMAP -->
-## Roadmap
+## Roadmap & Next Steps
 
-- [ ] Feature 1: Ensuring scalability by deploying the application and moving the database to the cloud.
-- [ ] Feature 2:
-- [ ] Feature 3:
+- [ ] Ensuring scalability by deploying the application and moving the database to the cloud.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
