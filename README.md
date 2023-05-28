@@ -50,7 +50,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-We have built a software application that allows registered users to track pricing information about their selected stocks, as well as to stay up-to-date with the financial news most relevant to those tracked stocks.
+We have built a Flask-based web application that allows registered users to track pricing information about their selected stocks, as well as to stay up-to-date with the financial news most relevant to those tracked stocks through integration with external APIs.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -67,36 +67,87 @@ We have built a software application that allows registered users to track prici
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+### Features
+* User Registration: Users can create an account by providing their email, first name, last name, and password. Passwords are securely hashed and stored in the database. They are also required to enter at least three stock symbols.
+* User Login: Registered users can log in to their accounts using their email and password.
+* Stock Dashboard: After logging in, users are presented with a dashboard that displays stock information and related news articles. The stock information is fetched from the Alpha Vantage API and includes the symbol, current price, previous price, percentage difference, and price direction (whether the price has gone up or down). The news articles are fetched from an API based on the user's stock preferences.
+* Stock Preferences: Users can customize their stock preferences by adding or modifying the stock symbols they are interested in. They can edit their preferences from the dashboard or the settings page.
+* Password Update: Users can change their account password by providing their current password and entering a new password.
+* Logout: Users can log out from their account, which redirects them to the login page.
+
+### File structure
+* auth.py: This file contains the authentication-related routes, including user registration, login, logout, and password update.
+* models.py: This file defines the database models used by the application. It includes the User model, which represents the user accounts and their associated fields.
+* views.py: This file contains the main routes and logic for rendering the dashboard, fetching stock data and news articles, and handling user actions.
+* config.py: This file stores the configuration variables for the application, such as database credentials.
+* total_stock_list.py: This file contains a list of valid stock symbols used for validation purposes.
+* templates/: This directory contains the HTML templates used for rendering the web pages.
+
+
 <!-- GETTING STARTED -->
 ## Getting Started
-
-(Here we can give instructions on setting up the project locally.)
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+The application requires the following dependencies which can be installed from the requirements.txt (see Installation):
+
+* Flask: A micro web framework used for building the web application.
+* Flask-Login: A Flask extension that handles user authentication and session management.
+* Flask-WTF: A Flask extension that simplifies the handling of forms.
+* SQLAlchemy: A Python SQL toolkit and Object-Relational Mapping (ORM) library used for database operations.
+* PyMySQL: A MySQL client library used for connecting to the MySQL database.
+* SendGrid: A library for sending emails, used for password reset functionality.
+* Requests: A library for making HTTP requests, used for fetching data from external APIs.
+* Werkzeug: A library used for password hashing and verification.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. TO CHANGE!!!! Get a free API Key at [https://example.com](https://example.com) ********
+2. Ensure that Python 3.x is installed on your system
+3. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/Stock-News-Monitoring-Program/*************.git
    ```
-3. Install NPM packages
+4. Navigate to the project directory **********
+    ```sh
+    cd REPOSITORYNAME
+    ```
+5. Create a virtual environment to isolate the project's dependencies
+    ```sh
+    python3 -m venv venv
+    ```
+6. Activate the virtual environment
+    ```sh
+    venv\Scripts\activate
+    ```
+7. Install requirements
    ```sh
-   npm install
+   pip install -r requirements.txt
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+8. Ensure that you have a MySQL database set up and running
+   * Create a database called 'stock'
+9. Configure the application
+   Within the config.py, ensure the following variables match your database credentials
+    * HOST
+    * PORT
+    * USER
+    * PASSWORD
+    * DATABASE
+   
+10. Enter your API in `views.py`
+11. Initialise the database
+    ```sh
+    flask db init
+    flask db migrate -m "Initial migration"
+    flask db upgrade
+    ```
+12. Start the application
+    ```sh
+    flask run
+    ``` 
+13. Open your web browser and visit http://localhost:5000 to access the application. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,7 +156,9 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-We can use this space to show useful examples of how our project can be used (screenshots, code examples and demos).
+<a href="https://scribehow.com/embed/Workflow__qVAlhm1uSri_yBlJijAXIw?as=scrollable&skipIntro=true" target="_blank">Link to Website Workflow</a>
+
+
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
