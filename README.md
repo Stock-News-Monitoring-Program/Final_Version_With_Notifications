@@ -3,14 +3,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Stock-News-Monitoring-Program/stock_news">
+  <a href="https://github.com/Stock-News-Monitoring-Program/Final_Version_With_Notifications">
     <img src="https://cdn.pixabay.com/photo/2020/05/21/22/23/logo-5203035_1280.png" alt="Logo" height="130">
   </a>
   <h1><em>stocktrack.io<em/></h1>
   <p align="center">
     Welcome to a simplified way of tracking stock information.
     <br />
-    <a href="https://github.com/Stock-News-Monitoring-Program/stock_news"><strong>Click here to access the repo.»</strong></a>
+    <a href="https://github.com/Stock-News-Monitoring-Program/Final_Version_With_Notifications"><strong>Click here to access the repo.»</strong></a>
     <br />
     <br />
   </p>
@@ -98,18 +98,18 @@ The application requires the following dependencies (amongst others) which can b
 * Requests: A library for making HTTP requests, used for fetching data from external APIs.
 * Werkzeug: A library used for password hashing and verification.
 
-### Installation UPDAAAAAATE THIS PART
+### Installation
 
 1. Get a free API Key for Alpha Vantage, News API, SendGrid at [https://www.alphavantage.co/](https://www.alphavantage.co/), [https://newsapi.org](https://newsapi.org/) and [https://www.twilio.com/en-us](https://www.twilio.com/en-us), respectively.
 
 2. Ensure that Python 3.x is installed on your system.
 3. Clone the repo
    ```sh
-   git clone https://github.com/Stock-News-Monitoring-Program/*************.git
+   git clone https://github.com/Stock-News-Monitoring-Program/Final_Version_With_Notifications.git
    ```
-4. Navigate to the project directory **********
+4. Navigate to the project directory
     ```sh
-    cd REPOSITORYNAME
+    cd Final_Version_With_Notifications
     ```
 5. Create a virtual environment to isolate the project's dependencies
     ```sh
