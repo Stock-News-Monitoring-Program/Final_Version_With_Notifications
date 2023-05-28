@@ -195,14 +195,14 @@ def fetch_news_for_messaging(companies):
         text_version = "\n".join(list_articles)
         text.append(text_version)
         news_body = "\n".join(text)
-    return news_body
+        return news_body
 
 # Send the email with news using SendGrid API
 def send_message(user, company):
     message = Mail(
         from_email='NewsStockMonitoring4@gmail.com',
         to_emails=user.email,
-        subject='StockAlertNews',
+        subject=f'{company} News',
         html_content=fetch_news_for_messaging(company))
     sg = SendGridAPIClient("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")
     response = sg.send(message)
