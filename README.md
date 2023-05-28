@@ -100,7 +100,7 @@ The application requires the following dependencies (amongst others) which can b
 
 ### Installation
 
-1. Get a free API Key for Alpha Vantage, News API, SendGrid at [https://www.alphavantage.co/](https://www.alphavantage.co/), [https://newsapi.org](https://newsapi.org/) and [https://www.twilio.com/en-us](https://www.twilio.com/en-us), respectively.
+1. Get a free API Key for Alpha Vantage, News API, SendGrid at [https://www.alphavantage.co/](https://www.alphavantage.co/), [https://newsapi.org](https://newsapi.org/) and [[https://www.twilio.com/en-us](https://interactive.twilio.com/email-brand-signup-sales)](https://interactive.twilio.com/email-brand-signup-sales), respectively.
 
 2. Ensure that Python 3.x is installed on your system.
 3. Clone the repo
