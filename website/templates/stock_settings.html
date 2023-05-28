@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Stock Selection</h1>
+  <p>&nbsp;</p>
+  <p>
+    Please ensure you type in the stocks' ticker symbols.
+  </p>
+  <p>
+    If not known, you can refer to 
+    <a href="https://stockanalysis.com/stocks/" target="_blank">this webpage.</a>
+  </p>
+  <p>&nbsp;</p>
+  <form method="POST" action="{{ url_for('auth.edit_stock') }}">
+    <label for="stock_1">Ticker Symbol 1:</label>
+    <input type="text" id="stock_1" name="stock_1" value="{{ user.stock_1 }}"><br>
+    <p>&nbsp;</p>
+
+    <label for="stock_2">Ticker Symbol 2:</label>
+    <input type="text" id="stock_2" name="stock_2" value="{{ user.stock_2 }}"><br>
+    <p>&nbsp;</p>
+
+    <label for="stock_3">Ticker Symbol 3:</label>
+    <input type="text" id="stock_3" name="stock_3" value="{{ user.stock_3 }}"><br>
+    <p>&nbsp;</p>
+
+    <label for="stock_4">Ticker Symbol 4:</label>
+    <input type="text" id="stock_4" name="stock_4" value="{{ user.stock_4 }}"><br>
+    <p>&nbsp;</p>
+
+    <label for="stock_5">Ticker Symbol 5:</label>
+    <input type="text" id="stock_5" name="stock_5" value="{{ user.stock_5 }}"><br>
+    <p>&nbsp;</p>
+    <label for="percentage_difference_limit">Percentage changings in price for getting notification:</label>
+    <input type="number" id="percentage_difference_limit" name="percentage_difference_limit" step="0.01" value="{{ current_user.percentage_difference_limit }}"><br>
+    <p>&nbsp;</p>
+    <input type="submit" value="Save Changes" class="btn btn-info">
+  </form>
+
+{% endblock %}
+
+

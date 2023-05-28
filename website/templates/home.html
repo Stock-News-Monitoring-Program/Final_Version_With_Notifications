@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <p>&nbsp;</p>
+  <h1>My Watchlist.</h1>
+  <p>&nbsp;</p>
+  {% if stock_data %}
+  <h3>Pricing.</h3>
+  <div class="stock-charts">
+    {% for stock in stock_data %}
+      <div id="chart-{{ loop.index }}" class="stock-chart"></div>
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <script>
+        var stockData{{ loop.index }} = [
+          {% for date, values in stock.data.items() %}
+            { x: "{{ date }}", y: {{ values['4. close'] }} }{% if not loop.last %},{% endif %}
+          {% endfor %}
+        ];
+
+        var layout{{ loop.index }} = {
+          title: "{{ stock.symbol.upper() }}'s Closing Prices Since the Beginning of 2023",
+          xaxis: { title: 'Date' },
+          yaxis: { title: 'Stock Price ($)' }
+        };
+
+        Plotly.newPlot("chart-{{ loop.index }}", [{ x: stockData{{ loop.index }}.map(d => d.x), y: stockData{{ loop.index }}.map(d => d.y) }], layout{{ loop.index }});
+      </script>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+        <h5>Yesterday's Closing Price: ${{ stock.first_price }}</h5>
+        <h5>The Day Before Yesterday's Closing Price: ${{ stock.second_price }}</h5>
+        {% if stock.percentage_difference > 0 %}
+          <h5>Price Direction: <span style="color: green">🔺 Up</span></h5>
+        {% elif stock.percentage_difference < 0 %}
+          <h5>Price Direction: <span style="color: red">🔻 Down</span></h5>
+        {% else %}
+          <h5>Price Direction: No Change</h5>
+        {% endif %}
+        <h5>Percentage Difference: {{ stock.percentage_difference|round(3) }}%</h5>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No stock data available.</p>
+{% endif %}
+
+  {% if news_data %}
+  <p>&nbsp;</p>
+  <h3>Relevant News.</h3>
+  <p>&nbsp;</p>
+  <div class="news-data">
+    {% for stock in stock_data %}
+      <h5>Stock: {{ stock.symbol }}</h5>
+      <ul>
+        {% set article_count = 0 %}
+        {% for article in news_data %}
+          {% if stock.symbol == article.company %}
+            {% if article_count < 3 %}
+              <li>
+                <h6>{{ article.headline }}</h6>
+                <p>{{ article.brief }}</p>
+                <p><small>Source: <a href="{{ article.source }}">{{ article.source }}</a></small></p>
+              </li>
+              {% set article_count = article_count + 1 %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% if article_count == 0 %}
+          {% set no_news_available = true %}
+        {% endif %}
+      </ul>
+    {% endfor %}
+    {% if no_news_available %}
+      <p>No news available for this stock.</p>
+    {% endif %}
+  </div>
+{% else %}
+  <p>No news data available.</p>
+{% endif %}
+{% endblock %}

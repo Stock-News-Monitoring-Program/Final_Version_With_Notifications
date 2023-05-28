@@ -1,0 +1,147 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+content %}
+<form method="POST">
+  <style>
+    #welcome {
+      text-align: center;
+      font-size: 60px;
+    }
+  </style>
+  <p>&nbsp;</p>
+  <p id="welcome">Welcome to <em>stocktrack.io</em>!</p>
+  <p>&nbsp;</p>
+  <h1 align="center">Sign Up</h1>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h5>Personal Details</h5>
+  <p>&nbsp;</p>
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+      value="{{ form_data.email }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      name="firstName"
+      placeholder="Enter first name"
+      value="{{ form_data.firstName }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="lastName"
+      name="lastName"
+      placeholder="Enter last name"
+      value="{{ form_data.lastName }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password1">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password1"
+      name="password1"
+      placeholder="Enter password"
+      value="{{ form_data.password1 }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password2">Password (Confirm)</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password2"
+      name="password2"
+      placeholder="Confirm password"
+      value="{{ form_data.password2 }}"
+    />
+  <div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h5>Stock Selection</h5>
+    <p>&nbsp;</p>
+    <p>
+      Please select a minimum of three stocks you would like to track, and ensure you type in the stocks' ticker symbols.
+    </p>
+    <p>
+      If not known, you can refer to 
+      <a href="https://stockanalysis.com/stocks/" target="_blank">this webpage.</a>
+    </p>
+    <p>&nbsp;</p>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="stock_1">Ticker Symbol 1</label>
+    <input
+      type="text"
+      class="form-control"
+      id="stock_1"
+      name="stock_1"
+      placeholder="Enter ticker symbol"
+      value="{{ form_data.stock_1 }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="stock_2">Ticker Symbol 2</label>
+    <input
+      type="text"
+      class="form-control"
+      id="stock_2"
+      name="stock_2"
+      placeholder="Enter ticker symbol"
+      value="{{ form_data.stock_2 }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="stock_3">Ticker Symbol 3</label>
+    <input
+      type="text"
+      class="form-control"
+      id="stock_3"
+      name="stock_3"
+      placeholder="Enter ticker symbol"
+      value="{{ form_data.stock_3 }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="stock_4">Ticker Symbol 4</label>
+    <input
+      type="text"
+      class="form-control"
+      id="stock_4"
+      name="stock_4"
+      placeholder="Enter ticker symbol"
+      value="{{ form_data.stock_4 }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="stock_5">Ticker Symbol 5</label>
+    <input
+      type="text"
+      class="form-control"
+      id="stock_5"
+      name="stock_5"
+      placeholder="Enter ticker symbol"
+      value="{{ form_data.stock_5 }}"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-info">Submit</button>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}
