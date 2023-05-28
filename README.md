@@ -6,7 +6,7 @@
   <a href="https://github.com/Stock-News-Monitoring-Program/stock_news">
     <img src="https://cdn.pixabay.com/photo/2020/05/21/22/23/logo-5203035_1280.png" alt="Logo" height="130">
   </a>
-
+  <h1><em>stocktrack.io<em/></h1>
   <p align="center">
     Welcome to a simplified way of tracking stock information.
     <br />
