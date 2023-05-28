@@ -14,7 +14,6 @@ class User(db.Model, UserMixin):
     stock_3 = db.Column(db.String(50))
     stock_4 = db.Column(db.String(50))
     stock_5 = db.Column(db.String(50))
-    percentage_difference_limit = db.Column(db.Float, default=float(2.0))
 
 
     def get_id(self):
