@@ -76,7 +76,7 @@ We have built a Flask-based web application that allows registered users to trac
 * views.py: This file contains the main routes and logic for rendering the dashboard, fetching stock data and news articles, and handling user actions.
 * config.py: This file stores the configuration variables for the application, such as database credentials.
 * total_stock_list.py: This file contains a list of valid stock symbols used for validation purposes.
-* templates/: This directory contains the HTML templates used for rendering the web pages. Including the base, home, settings, sign_up and stcok_setting HTML Files. 
+* templates/: This directory contains the HTML templates used for rendering the web pages. Including the base, home, settings, sign_up and stock_setting HTML Files. 
 
 
 <!-- GETTING STARTED -->
