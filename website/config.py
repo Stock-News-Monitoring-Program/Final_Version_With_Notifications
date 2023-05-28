@@ -1,6 +1,6 @@
 HOST = "localhost"
 PORT = "3306"
 USER = "root"
-PASSWORD = "Levanter_6"
+PASSWORD = ""
 DATABASE = "stock"
 SECRET_KEY = "CFG"
