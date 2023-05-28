@@ -83,7 +83,6 @@ We have built a Flask-based web application that allows registered users to trac
 * config.py: This file stores the configuration variables for the application, such as database credentials.
 * total_stock_list.py: This file contains a list of valid stock symbols used for validation purposes.
 * templates/: This directory contains the HTML templates used for rendering the web pages. Including the base, home, settings, sign_up and stcok_setting HTML Files. 
-* The home HTML File is displaying the stock values in graphs using Plotly and the closing price, price difference and the price direction. Further it is displaying the current news data for the selected stocks.
 
 
 <!-- GETTING STARTED -->
