@@ -28,8 +28,8 @@
         Plotly.newPlot("chart-{{ loop.index }}", [{ x: stockData{{ loop.index }}.map(d => d.x), y: stockData{{ loop.index }}.map(d => d.y) }], layout{{ loop.index }});
       </script>
       <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
-        <h5>Yesterday's Closing Price: ${{ stock.first_price }}</h5>
-        <h5>The Day Before Yesterday's Closing Price: ${{ stock.second_price }}</h5>
+        <h5>Yesterday's Closing Price: <b>${{ stock.first_price }}</b></h5>
+        <h5>The Day Before Yesterday's Closing Price: <b>${{ stock.second_price }}</b></h5>
         {% if stock.percentage_difference > 0 %}
           <h5>Price Direction: <span style="color: green">🔺 Up</span></h5>
         {% elif stock.percentage_difference < 0 %}
@@ -37,7 +37,7 @@
         {% else %}
           <h5>Price Direction: No Change</h5>
         {% endif %}
-        <h5>Percentage Difference: {{ stock.percentage_difference|round(3) }}%</h5>
+        <h5>Percentage Difference: <b>{{ stock.percentage_difference|round(3) }}%</b></h5>
       </div>
     {% endfor %}
   </div>
@@ -51,7 +51,7 @@
   <p>&nbsp;</p>
   <div class="news-data">
     {% for stock in stock_data %}
-      <h5>Stock: {{ stock.symbol }}</h5>
+      <h5>Stock: {{ stock.symbol.upper() }}</h5>
       <ul>
         {% set article_count = 0 %}
         {% for article in news_data %}
@@ -70,11 +70,13 @@
           {% set no_news_available = true %}
         {% endif %}
       </ul>
+      {% if no_news_available %}
+        <p>No news available for this stock.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      {% endif %}
     {% endfor %}
-    {% if no_news_available %}
-      <p>No news available for this stock.</p>
-    {% endif %}
-  </div>
+  </div>  
 {% else %}
   <p>No news data available.</p>
 {% endif %}
