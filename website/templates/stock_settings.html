@@ -31,6 +31,10 @@
     <label for="stock_5">Ticker Symbol 5:</label>
     <input type="text" id="stock_5" name="stock_5" value="{{ user.stock_5 }}"><br>
     <p>&nbsp;</p>
+    <label for="percentage_difference_limit">Percentage changings in price for getting notification:</label>
+    <input type="number" id="percentage_difference_limit" name="percentage_difference_limit" step="0.01" value="{{ current_user.percentage_difference_limit }}"><br>
+    <p>&nbsp;</p>
+    <input type="submit" value="Save Changes" class="btn btn-info">
   </form>
 
 {% endblock %}
