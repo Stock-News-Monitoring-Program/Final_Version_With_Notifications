@@ -68,7 +68,7 @@ We have built a Flask-based web application that allows registered users to trac
 * Stock Dashboard: After logging in, users are presented with a dashboard that displays their selected stocks' pricing data as well as most relevant news articles. Pricing information is fetched using the Alpha Vantage API and includes a visual representation of daily closing prices from the beginning of the year (2023) identified with the stock's the ticker symbol, the stock's latest closing price (yesterday's price) in USD, the stock's day-before-yesterday's closing price in USD, the percentage difference between the two, and the direction of the price change (i.e. whether the price has gone up or down). The news articles are fetched from an API based on the user's stock preferences.
 * Stock Selection: Users can ammend their stock preferences in the 'Stock Selection' page.
 * Personal Information Management: Users can ammend their personal details (including their password) in the 'My Account' page.
-* Notifications and Alerts: Users are notified via email (using Sendgrid) if their tracked stocks
+* Notifications and Alerts: Users are notified via email (using Sendgrid) if their tracked stocks' price has changed by more than a user-defined threshold.
 
 ### File Structure
 * auth.py: This file contains the authentication-related routes, including user registration, login, logout, and password update.
