@@ -10,6 +10,7 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String(100))
     last_name = db.Column(db.String(100))
     stock_1 = db.Column(db.String(50))
+    percentage_difference_limit = db.Column(db.Float, default=2.0)
     stock_2 = db.Column(db.String(50))
     stock_3 = db.Column(db.String(50))
     stock_4 = db.Column(db.String(50))
