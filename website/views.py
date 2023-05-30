@@ -195,7 +195,7 @@ def fetch_news_for_messaging(companies):
         text_version = "\n".join(list_articles)
         text.append(text_version)
         news_body = "\n".join(text)
-    return news_body
+        return news_body
 
 # Send the email with news using SendGrid API
 def send_message(user, company):
